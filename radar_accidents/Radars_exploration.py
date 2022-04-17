@@ -21,22 +21,7 @@ app.layout = html.Div([
     dcc.Slider(2003, 2018, 1,  # borne gauche, borne droite, le pas.
                value=2003,  # valeur au début.
                id="range-slider",  # ça c'est l'identifiant du slider.
-               marks={2003: "2003",
-                      2004: "2004",
-                      2005: "2005",
-                      2006: "2006",
-                      2007: "2007",
-                      2008: "2008",
-                      2009: "2009",
-                      2010: "2010",
-                      2011: "2011",
-                      2012: "2012",
-                      2013: "2013",
-                      2014: "2014",
-                      2015: "2015",
-                      2016: "2016",
-                      2017: "2017",
-                      2018: "2018"}  # les noms des points sur le slider.
+               marks={x:str(x) for x in range(2003,2019)}
                )])
 
 
