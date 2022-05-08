@@ -5,7 +5,7 @@ from dash import Dash, dcc, html, Input, Output
 
 class Radar_Accidents():
     def __init__(self, application=None):
-        self.df_radars = pd.read_pickle("data/radars.pkl")
+        self.df_radars = pd.read_pickle("data/lptr_radars.pkl")
 
         self.main_layout = html.Div(children=[
             html.H4('Interactive scatter plot with radars dataset'),

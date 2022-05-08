@@ -1,12 +1,13 @@
-import pandas as pd
 import datetime
 import dateutil as du
-import requests
+import glob
 import json
-import sys
+import numpy as np
+import pandas as pd
 import pathlib
 import re
-import glob
+import requests
+import sys
 
 #-------------------------------------------------------------------------
 # main
@@ -49,7 +50,7 @@ def prepare_data():
     df.loc[:,'lat'] = df['lat'].apply(convert_deg)
 
     # Saving
-    df.to_pickle("accidents.pkl")
+    df.to_pickle("lptr_accidents.pkl")
 
     # Download
     df2 = pd.read_csv(url_radars)
@@ -59,7 +60,7 @@ def prepare_data():
     radars_year["date_installation"] = pd.DatetimeIndex(radars_year['date_installation']).year
 
     # Saving
-    radars_year.to_pickle("radars.pkl")
+    radars_year.to_pickle("lptr_radars.pkl")
 
 if __name__ == '__main__':
     prepare_data()
